@@ -1,0 +1,2 @@
+data/custom/images/olivo2.jpg 
+data/custom/images/Juniperus-thurifera-01.jpg 
