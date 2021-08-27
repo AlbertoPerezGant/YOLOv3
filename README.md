@@ -1,25 +1,26 @@
 # Deteccion de objetos en video 
-Este repo basado en el proyecto [PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3) para correr detección de objetos sobre video. Construí sobre este proyecto para añadir la capacidad de detectar objetos en un stream de video en vivo.
+Proyecto Sifelec basado en [PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3) para correr detección de objetos sobre video. El objetivo es usar un entrenamiento personalizado para detectar copas y troncos de árboles
 
 [YOLO](https://pjreddie.com/darknet/yolo/) (**You Only Look Once** o Tú Solo Ves Una Vez, pero TSVUV no suena tan bien) es un modelo el cual esta optimizado para generar detecciones de elementos a una velocidad muy alta, es por eso que es una muy buena opción para usarlo en video. Tanto el entrenamiento como predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
 
-Por default este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
+Por defecto este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names). Este se puede usar como prueba para evaluar la detección básica.
 
-Los pasos a seguir para poder correr detección de objetos en el video de una webcam son los siguientes (La creación del ambiente asume que Anaconda esta instalado en la computadora):
+Los pasos a seguir para poder correr detección de objetos en el video de una webcam son los siguientes:
 
 # Crear ambiente
 Para tener en orden nuestras paqueterias de python primero vamos a crear un ambiente llamado "deteccionobj" el cual tiene la version 3.6 de python
+Para el entrenamiento de un nuevo modelo podemos usar "yolotrain" donde usamos la misma versión de python
 ``` 
 conda create -n deteccionobj python=3.6
 ```
 
 Activamos el ambiente deteccionobj para asegurarnos que estemos en el ambiente correcto al momento de hacer la instalación de todas las paqueterias necesarias
 ```
-source activate deteccionobj
+conda activate deteccionobj
 ```
 
 # Instalación de las paqueterias
-Estando dentro de nuestro ambiente vamos a instalar todas las paqueterias necesarias para correr nuestro detector de objetos en video, la lista de los paqueter y versiones a instalar están dentro del archivo requirements.txt por lo cual instalaremos haciendo referencia a ese archivo
+Estando dentro de nuestro ambiente se instalan todas las paqueterias necesarias para correr nuestro detector de objetos en video, la lista de las paqueterias y versiones a instalar están dentro del archivo requirements.txt por lo cual instalaremos haciendo referencia a ese archivo. Es posible que librerias como tensorflow o torch den problemas si no se realiza en Linux debido a la versión que viene definida en requirements.txt. Es recomendable realizar este proceso en un sistema Linux. Yo lo he realizado en WSL2 con Ubuntu.
 ```
 pip install -r requirements.txt
 ```
@@ -51,7 +52,7 @@ python deteccion_video.py --webcam 0 --directorio_video <directorio_al_video.mp4
 
 # Entrenamiento 
 
-Ahora, si lo que quieres es entrenar un modelo con las clases que tu quieras y no utilizar las 80 clases que vienen por default podemos entrenar nuestro propio modelo. Estos son los pasos que deberás seguir:
+Ahora, si lo que quieres es entrenar un modelo con las clases que tu quieras y no utilizar las 80 clases que vienen por defecto podemos entrenar nuestro propio modelo. Estos son los pasos que deberás seguir:
 
 Primero deberás etiquetar las imagenes con el formato VOC, aqui tengo un video explicando como hacer este etiquetado: 
 
@@ -69,6 +70,13 @@ cd ..
 ```
 
 ## Poner las imagenes y archivos de metadata en las carpetar necesarias
+
+Esto se puede hacer con el siguiente comando:
+
+```
+labelImg
+```
+Se abrirá una ventana con una aplicación donde se configura el metodo de salida a YOLO y se seleccionan las clases a definir en cada objeto. Si se está trabajando con WSL2, será necesario ejecutar el comando desde una terminal cmd ya que por el momento WSL2 no permite la ejecucion de aplicaciones GUI. El directorio de salida será **data/custom/labels** y etrada **data/custom/images**.
 
 Las imagenes etiquetadas tienen que estar en el directorio **data/custom/images** mientras que las etiquetas/metadata de las imagenes tienen que estar en **data/custom/labels**.
 Por cada imagen.jpg debe de existir un imagen.txt (metadata con el mismo nombre de la imagen)
