@@ -8,8 +8,7 @@ Por defecto este modelo esta pre entrenado para detecta 80 distintos objetos, la
 Los pasos a seguir para poder correr detección de objetos en el video de una webcam son los siguientes:
 
 # Crear ambiente
-Para tener en orden nuestras paqueterias de python primero vamos a crear un ambiente llamado "deteccionobj" el cual tiene la version 3.6 de python
-Para el entrenamiento de un nuevo modelo podemos usar "yolotrain" donde usamos la misma versión de python
+Para tener en orden nuestras paqueterias de python primero vamos a crear un ambiente llamado "deteccionobj" el cual tiene la version 3.6 de python. Para el entrenamiento de un nuevo modelo podemos usar "yolotrain" donde usamos la misma versión de python
 ``` 
 conda create -n deteccionobj python=3.6
 ```
