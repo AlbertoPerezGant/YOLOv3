@@ -1,9 +1,9 @@
 # Deteccion de objetos en video 
-Proyecto Sifelec basado en [PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3) para correr detección de objetos sobre video. El objetivo es usar un entrenamiento personalizado para detectar copas y troncos de árboles
+Proyecto Sifelec basado en [PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3) y realizado por @puigalex para correr detección de objetos sobre video. El objetivo es usar un entrenamiento personalizado para detectar copas y troncos de árboles
 
-[YOLO](https://pjreddie.com/darknet/yolo/) (**You Only Look Once** o Tú Solo Ves Una Vez, pero TSVUV no suena tan bien) es un modelo el cual esta optimizado para generar detecciones de elementos a una velocidad muy alta, es por eso que es una muy buena opción para usarlo en video. Tanto el entrenamiento como predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
+[YOLO](https://pjreddie.com/darknet/yolo/) (**You Only Look Once**) es un modelo el cual esta optimizado para generar detecciones de elementos a una velocidad muy alta, es por eso que es una muy buena opción para usarlo en video. Tanto el entrenamiento como predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
 
-Por defecto este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names). Este se puede usar como prueba para evaluar la detección básica.
+Por defecto este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/AlbertoPerezGant/sifelec/blob/master/data/coco.names). Este se puede usar como prueba para evaluar la detección básica.
 
 Los pasos a seguir para poder correr detección de objetos en el video de una webcam son los siguientes:
 
