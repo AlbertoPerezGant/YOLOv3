@@ -13,7 +13,7 @@ Para tener en orden nuestras paqueterias de python primero vamos a crear un ambi
 conda create -n deteccionobj python=3.6
 ```
 
-Activamos el ambiente deteccionobj para asegurarnos que estemos en el ambiente correcto al momento de hacer la instalación de todas las paqueterias necesarias
+Activamos el ambiende 'deteccionobj' para asegurarnos que tenemos un entorno limpio en el que trabajar con las mínimas incompatibilidades entre dependencias. En el caso de instalar las dependencias en Windows, es posible encontrar error al instalar torch. 
 ```
 conda activate deteccionobj
 ```
