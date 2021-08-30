@@ -1,5 +1,5 @@
 # Deteccion de objetos en video 
-Proyecto Sifelec basado en [PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3) y realizado por @puigalex para correr detección de objetos sobre video. El objetivo es usar un entrenamiento personalizado para detectar copas y troncos de árboles
+Proyecto de detección de objetos basado en [PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3) y realizado por @puigalex para correr detección de objetos sobre video. El objetivo es usar un entrenamiento personalizado para detectar copas y troncos de árboles.
 
 [YOLO](https://pjreddie.com/darknet/yolo/) (**You Only Look Once**) es un modelo el cual esta optimizado para generar detecciones de elementos a una velocidad muy alta, es por eso que es una muy buena opción para usarlo en video. Tanto el entrenamiento como predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
 
