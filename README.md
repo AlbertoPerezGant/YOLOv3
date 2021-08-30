@@ -28,12 +28,8 @@ pip install -r requirements.txt
 Para poder correr el modelo de yolo tendremos que descargar los pesos de la red neuronal, los pesos son los valores que tienen todas las conexiones entre las neuronas de la red neuronal de YOLO, este tipo de modelos son computacionalmente muy pesados de entrenar desde cero por lo cual descargar el modelo pre entrenado es una buena opción.
 
 ```
-bash weights/download_weights.sh
-```
-
-Movemos los pesos descargados a la carpeta llamada weights
-```
-mv yolov3.weights weights/
+cd weights/
+bash download_weights.sh
 ```
 
 # Correr el detector de objetos en video 
